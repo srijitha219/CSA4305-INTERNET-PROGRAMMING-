@@ -1,0 +1,104 @@
+Experiment 3: CSS Layout Debugging
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Layout Debugging</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    padding:20px;
+}
+
+header{
+    background:#0077cc;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    flex:1;
+    min-width:250px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* Responsive Layout */
+
+@media(max-width:768px){
+
+.container{
+    flex-direction:column;
+}
+
+.box{
+    width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>CSS Layout Debugging</h1>
+</header>
+
+<div class="container">
+
+    <div class="box">
+        <h2>Section 1</h2>
+        <p>This section demonstrates proper alignment using Flexbox.</p>
+    </div>
+
+    <div class="box">
+        <h2>Section 2</h2>
+        <p>The layout automatically adjusts when the browser is resized.</p>
+    </div>
+
+    <div class="box">
+        <h2>Section 3</h2>
+        <p>Spacing and overlapping issues are prevented using responsive CSS.</p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 CSS Layout Debugging Experiment
+</footer>
+
+</body>
+</html>

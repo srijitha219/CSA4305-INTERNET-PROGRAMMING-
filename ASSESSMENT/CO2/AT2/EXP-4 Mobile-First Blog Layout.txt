@@ -1,0 +1,79 @@
+EXP-4 Mobile-First Blog Layout 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mobile First Blog</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+}
+
+.container{
+display:flex;
+flex-direction:column;
+padding:10px;
+}
+
+header,footer{
+background:#333;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.content{
+background:#ddd;
+padding:20px;
+margin:10px 0;
+}
+
+.sidebar{
+background:#bbb;
+padding:20px;
+}
+
+@media(min-width:768px){
+.container{
+flex-direction:row;
+}
+
+.content{
+flex:3;
+margin-right:10px;
+}
+
+.sidebar{
+flex:1;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+My Blog
+</header>
+
+<div class="container">
+
+<div class="content">
+<h2>Blog Title</h2>
+<p>This is blog content.</p>
+</div>
+
+<div class="sidebar">
+Categories
+</div>
+
+</div>
+
+<footer>
+Copyright 2026
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+EXP-5 JavaScript Event Handling for Dynamic Menu 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Menu</title>
+
+<style>
+body{
+font-family:Arial;
+}
+
+button{
+padding:10px 20px;
+margin:20px;
+}
+
+#menu{
+display:none;
+background:#333;
+color:white;
+padding:20px;
+width:200px;
+}
+
+#menu a{
+display:block;
+color:white;
+text-decoration:none;
+padding:10px;
+}
+
+#menu a:hover{
+background:#555;
+}
+</style>
+</head>
+
+<body>
+
+<button id="btn">Menu</button>
+
+<div id="menu">
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+
+<script>
+let btn=document.getElementById("btn");
+let menu=document.getElementById("menu");
+
+btn.addEventListener("click",function(){
+if(menu.style.display==="block"){
+menu.style.display="none";
+}
+else{
+menu.style.display="block";
+}
+});
+</script>
+
+</body>
+</html>

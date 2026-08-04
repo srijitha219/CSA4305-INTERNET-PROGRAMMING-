@@ -1,0 +1,88 @@
+EXP-1 Responsive Navigation Bar Design 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Responsive Navigation Bar</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+body{
+background:#f4f4f4;
+}
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#333;
+padding:15px;
+color:white;
+}
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+ul{
+display:flex;
+list-style:none;
+}
+ul li{
+margin:0 15px;
+}
+ul li a{
+color:white;
+text-decoration:none;
+}
+.menu{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+@media(max-width:768px){
+ul{
+display:none;
+flex-direction:column;
+background:#333;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+}
+ul.show{
+display:flex;
+}
+.menu{
+display:block;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">Shop</div>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<ul id="navLinks">
+<li><a href="#">Home</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">Categories</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Cart</a></li>
+</ul>
+
+</nav>
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

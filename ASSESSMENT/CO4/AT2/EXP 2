@@ -1,0 +1,55 @@
+2. MVC WORKFLOW
+
+ALGORITHM MVCWorkflow
+
+BEGIN
+    USER sends HTTP request
+    RECEIVE request at Web Server
+
+    IDENTIFY requested URL and HTTP method
+
+    SEND request to Controller
+
+    CONTROLLER receives request
+
+    VALIDATE request data
+
+    IF request data is invalid THEN
+        SET error message
+        SEND request to View
+        VIEW generates error response
+        RETURN response to USER
+        STOP
+    END IF
+
+    CONTROLLER calls required Model method
+
+    MODEL receives request from Controller
+
+    MODEL establishes connection with DATABASE
+
+    EXECUTE required database operation
+
+    RETRIEVE data from DATABASE
+
+    PROCESS retrieved data
+
+    CLOSE DATABASE connection
+
+    RETURN processed data to CONTROLLER
+
+    CONTROLLER stores data for View
+
+    SELECT appropriate VIEW
+
+    VIEW receives data from CONTROLLER
+
+    GENERATE dynamic HTML response
+
+    SEND generated response to Web Server
+
+    Web Server sends HTTP response to USER
+
+    USER displays the response
+
+END

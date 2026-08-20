@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Finder</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f3f6f9}
+header{background:#198754;color:white;padding:20px;text-align:center}
+nav a{color:white;text-decoration:none;margin:15px}
+.container{max-width:1100px;margin:30px auto;padding:20px}
+.search{background:white;padding:25px;border-radius:10px}
+input,select,button{width:100%;padding:12px;margin:7px 0}
+button{background:#198754;color:white;border:0;border-radius:5px}
+.properties{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:20px;border-radius:10px;box-shadow:0 3px 10px #ccc}
+footer{background:#198754;color:white;text-align:center;padding:20px}
+@media(max-width:700px){.properties{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏠 Home Finder</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Properties</a>
+<a href="#">Agents</a>
+<a href="#">Favourites</a>
+<a href="#">Login</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="search">
+<h2>Find Your Property</h2>
+<input placeholder="Location">
+<select>
+<option>Property Type</option>
+<option>House</option>
+<option>Apartment</option>
+<option>Land</option>
+<option>Commercial</option>
+</select>
+<input type="number" placeholder="Maximum Budget">
+<button onclick="alert('Properties Found')">Search Property</button>
+</div>
+
+<h2>Available Properties</h2>
+
+<div class="properties">
+
+<div class="card">
+<h3>2 BHK Apartment</h3>
+<p>Location: Chennai</p>
+<p>Price: ₹55 Lakhs</p>
+<p>2 Bedrooms | 2 Bathrooms</p>
+<button onclick="alert('Property Details Opened')">View Details</button>
+</div>
+
+<div class="card">
+<h3>Independent House</h3>
+<p>Location: Bangalore</p>
+<p>Price: ₹85 Lakhs</p>
+<p>3 Bedrooms | 3 Bathrooms</p>
+<button onclick="alert('Property Details Opened')">View Details</button>
+</div>
+
+<div class="card">
+<h3>Residential Land</h3>
+<p>Location: Coimbatore</p>
+<p>Price: ₹35 Lakhs</p>
+<p>1200 sq.ft</p>
+<button onclick="alert('Property Details Opened')">View Details</button>
+</div>
+
+</div>
+
+</div>
+
+<footer>© 2026 Home Finder Real Estate</footer>
+
+</body>
+</html>

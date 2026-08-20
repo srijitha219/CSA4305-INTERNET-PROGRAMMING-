@@ -1,0 +1,42 @@
+1. XML PARSING ALGORITHM
+
+ALGORITHM ParseXMLDocument
+
+BEGIN
+    LOAD XML file
+    IF XML file cannot be loaded THEN
+        DISPLAY "Error loading XML file"
+        STOP
+    END IF
+
+    CREATE XML document object
+    PARSE XML document
+
+    GET root element of XML document
+
+    FOR EACH child node under root element DO
+        IF child node is an element THEN
+            GET element name
+
+            IF element contains child elements THEN
+                FOR EACH sub-node inside element DO
+                    IF sub-node is an element THEN
+                        GET sub-node name
+                        GET sub-node value
+                        STORE extracted data
+                    END IF
+                END FOR
+            ELSE
+                GET element value
+                STORE extracted data
+            END IF
+        END IF
+    END FOR
+
+    DISPLAY "Extracted XML Data"
+
+    FOR EACH stored record DO
+        DISPLAY record in readable format
+    END FOR
+
+END

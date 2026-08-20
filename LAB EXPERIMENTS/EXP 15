@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MedCare Hospital</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#eef8f8}
+header{background:#087f8c;color:white;padding:20px;text-align:center}
+nav a{color:white;text-decoration:none;margin:15px}
+.container{max-width:1100px;margin:30px auto;padding:20px}
+.doctors{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:25px;border-radius:10px;box-shadow:0 3px 10px #ccc}
+input,select,button{width:100%;padding:12px;margin:8px 0}
+button{background:#087f8c;color:white;border:0;border-radius:5px}
+footer{background:#087f8c;color:white;text-align:center;padding:20px}
+@media(max-width:700px){.doctors{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏥 MedCare Hospital</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Doctors</a>
+<a href="#">Appointments</a>
+<a href="#">History</a>
+<a href="#">Login</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Search Doctor</h2>
+<input placeholder="Enter Location">
+<select>
+<option>Select Specialty</option>
+<option>Cardiology</option>
+<option>Neurology</option>
+<option>Dermatology</option>
+<option>General Medicine</option>
+</select>
+<button onclick="alert('Doctors Found')">Search Doctor</button>
+</div>
+
+<h2>Available Doctors</h2>
+
+<div class="doctors">
+
+<div class="card">
+<h3>Dr. Arun Kumar</h3>
+<p>Cardiologist</p>
+<p>Chennai</p>
+<p>Available: 10 AM - 2 PM</p>
+<button onclick="alert('Appointment Booked')">Book Appointment</button>
+</div>
+
+<div class="card">
+<h3>Dr. Priya Sharma</h3>
+<p>Dermatologist</p>
+<p>Chennai</p>
+<p>Available: 2 PM - 5 PM</p>
+<button onclick="alert('Appointment Booked')">Book Appointment</button>
+</div>
+
+<div class="card">
+<h3>Dr. Ravi Kumar</h3>
+<p>Neurologist</p>
+<p>Chennai</p>
+<p>Available: 9 AM - 12 PM</p>
+<button onclick="alert('Appointment Booked')">Book Appointment</button>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Patient Appointment</h2>
+<input placeholder="Patient Name">
+<input placeholder="Phone Number">
+<input type="date">
+<input type="time">
+<button onclick="alert('Appointment Confirmed')">Confirm Appointment</button>
+</div>
+
+</div>
+
+<footer>© 2026 MedCare Hospital</footer>
+
+</body>
+</html>

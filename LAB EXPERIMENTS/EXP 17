@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>StyleHub Fashion Store</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#fafafa}
+header{background:#7b2cbf;color:white;padding:20px;text-align:center}
+nav a{color:white;text-decoration:none;margin:15px}
+.container{max-width:1100px;margin:30px auto;padding:20px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:20px;border-radius:10px;box-shadow:0 3px 10px #ccc}
+input,select,button{width:100%;padding:12px;margin:7px 0}
+button{background:#7b2cbf;color:white;border:0;border-radius:5px}
+footer{background:#7b2cbf;color:white;text-align:center;padding:20px}
+@media(max-width:700px){.products{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>👗 StyleHub</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Men</a>
+<a href="#">Women</a>
+<a href="#">Kids</a>
+<a href="#">Wishlist</a>
+<a href="#">Login</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Search Fashion</h2>
+<input placeholder="Search products">
+<select>
+<option>All Categories</option>
+<option>Men</option>
+<option>Women</option>
+<option>Kids</option>
+<option>Footwear</option>
+</select>
+<button onclick="alert('Products Found')">Search</button>
+</div>
+
+<div class="products">
+
+<div class="card">
+<h3>Men's Casual Shirt</h3>
+<p>₹1,200</p>
+<p>Sizes: S M L XL</p>
+<button onclick="alert('Added to Cart')">Add to Cart</button>
+</div>
+
+<div class="card">
+<h3>Women's Dress</h3>
+<p>₹1,800</p>
+<p>Sizes: S M L XL</p>
+<button onclick="alert('Added to Cart')">Add to Cart</button>
+</div>
+
+<div class="card">
+<h3>Sports Shoes</h3>
+<p>₹2,500</p>
+<p>Available Sizes: 6 - 10</p>
+<button onclick="alert('Added to Cart')">Add to Cart</button>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Checkout</h2>
+<input placeholder="Customer Name">
+<input placeholder="Delivery Address">
+<select>
+<option>Select Payment Method</option>
+<option>Credit Card</option>
+<option>Debit Card</option>
+<option>UPI</option>
+</select>
+<button onclick="alert('Order Placed Successfully')">Place Order</button>
+</div>
+
+</div>
+
+<footer>© 2026 StyleHub Fashion Store</footer>
+
+</body>
+</html>

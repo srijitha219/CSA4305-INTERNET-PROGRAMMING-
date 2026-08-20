@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Flight Reservation</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#eef4f8}
+header{background:#063970;color:white;padding:20px;text-align:center}
+nav a{color:white;text-decoration:none;margin:15px}
+.container{max-width:1100px;margin:30px auto;padding:20px}
+.card{background:white;padding:25px;margin:20px 0;border-radius:10px;box-shadow:0 3px 10px #ccc}
+.form{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+input,select,button{width:100%;padding:12px;margin-top:8px}
+button{background:#063970;color:white;border:0;border-radius:5px}
+.flights{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+footer{background:#063970;color:white;text-align:center;padding:20px}
+@media(max-width:700px){.form,.flights{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>✈️ FlyEasy</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Search Flight</a>
+<a href="#">My Ticket</a>
+<a href="#">Booking Status</a>
+<a href="#">Login</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Search Flight</h2>
+<div class="form">
+<div>From<input type="text" placeholder="Departure"></div>
+<div>Destination<input type="text" placeholder="Destination"></div>
+<div>Date<input type="date"></div>
+<div>Class
+<select>
+<option>Economy</option>
+<option>Business</option>
+<option>First Class</option>
+</select>
+</div>
+</div>
+<button onclick="alert('Flight search completed')">Search Flight</button>
+</div>
+
+<h2>Available Flights</h2>
+
+<div class="flights">
+<div class="card">
+<h3>Air India</h3>
+<p>Chennai → Delhi</p>
+<p>09:00 AM - 12:00 PM</p>
+<p>Seats: 25</p>
+<button onclick="alert('Flight selected')">Book Ticket</button>
+</div>
+
+<div class="card">
+<h3>IndiGo</h3>
+<p>Chennai → Mumbai</p>
+<p>11:00 AM - 01:00 PM</p>
+<p>Seats: 18</p>
+<button onclick="alert('Flight selected')">Book Ticket</button>
+</div>
+
+<div class="card">
+<h3>Vistara</h3>
+<p>Chennai → Bangalore</p>
+<p>02:00 PM - 03:00 PM</p>
+<p>Seats: 30</p>
+<button onclick="alert('Flight selected')">Book Ticket</button>
+</div>
+</div>
+
+<div class="card">
+<h2>Ticket Payment</h2>
+<input type="text" placeholder="Card Holder Name">
+<input type="text" placeholder="Card Number">
+<button onclick="alert('Payment Successful')">Pay Now</button>
+</div>
+
+</div>
+
+<footer>© 2026 FlyEasy - Flight Reservation System</footer>
+
+</body>
+</html>

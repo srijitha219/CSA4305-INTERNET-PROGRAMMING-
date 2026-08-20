@@ -1,0 +1,48 @@
+4. DATABASE RETRIEVAL ALGORITHM
+
+ALGORITHM RetrieveDatabaseData
+
+BEGIN
+    START
+
+    LOAD database driver
+
+    ESTABLISH connection with database
+
+    IF connection fails THEN
+        DISPLAY "Database connection failed"
+        STOP
+    END IF
+
+    CREATE SQL query
+        Example: SELECT * FROM Products
+
+    CREATE statement object
+
+    EXECUTE SQL query
+
+    STORE returned records in ResultSet
+
+    IF ResultSet is empty THEN
+        DISPLAY "No records found"
+    ELSE
+        DISPLAY "Retrieved Records"
+
+        WHILE ResultSet has next record DO
+            MOVE to next record
+
+            READ required fields
+
+            DISPLAY field values
+        END WHILE
+    END IF
+
+    CLOSE ResultSet
+
+    CLOSE Statement
+
+    CLOSE Database Connection
+
+    DISPLAY "Data retrieval completed"
+
+END

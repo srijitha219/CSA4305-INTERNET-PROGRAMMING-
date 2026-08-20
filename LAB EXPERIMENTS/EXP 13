@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Cake Ordering</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#fff5f7}
+header{background:#d63384;color:white;padding:20px;text-align:center}
+nav a{color:white;text-decoration:none;margin:15px}
+.container{max-width:1100px;margin:30px auto;padding:20px}
+.cakes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 3px 10px #ddd}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+button{background:#d63384;color:white;border:0;padding:12px;width:100%;margin-top:10px;border-radius:5px}
+input,select{width:100%;padding:12px;margin:7px 0}
+footer{background:#d63384;color:white;text-align:center;padding:20px}
+@media(max-width:700px){.cakes{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎂 Cake House</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Cakes</a>
+<a href="#">Categories</a>
+<a href="#">My Orders</a>
+<a href="#">Login</a>
+</nav>
+</header>
+
+<div class="container">
+
+<h2>Our Cakes</h2>
+
+<div class="cakes">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<h3>Chocolate Cake</h3>
+<p>₹650</p>
+<p>Rich chocolate cake with cream.</p>
+<button onclick="alert('Chocolate Cake added to cart')">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
+<h3>Strawberry Cake</h3>
+<p>₹700</p>
+<p>Fresh strawberry cream cake.</p>
+<button onclick="alert('Strawberry Cake added to cart')">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62">
+<h3>Birthday Cake</h3>
+<p>₹850</p>
+<p>Special customized birthday cake.</p>
+<button onclick="alert('Birthday Cake added to cart')">Add to Cart</button>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Shipping Address</h2>
+<input placeholder="Customer Name">
+<input placeholder="Phone Number">
+<input placeholder="Address">
+<input placeholder="City">
+<button onclick="alert('Order Placed Successfully')">Place Order</button>
+</div>
+
+</div>
+
+<footer>© 2026 Cake House - Online Cake Ordering</footer>
+
+</body>
+</html>

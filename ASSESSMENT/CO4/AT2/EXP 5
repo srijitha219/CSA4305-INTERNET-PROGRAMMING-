@@ -1,0 +1,53 @@
+5. PHP VALIDATION ALGORITHM
+
+ALGORITHM ValidatePHPForm
+
+BEGIN
+    START
+
+    RECEIVE form data
+
+    INITIALIZE error list as empty
+
+    READ name
+    READ email
+    READ password
+
+    IF name is empty THEN
+        ADD "Name is required" to error list
+    END IF
+
+    IF email is empty THEN
+        ADD "Email is required" to error list
+    ELSE
+        IF email format is invalid THEN
+            ADD "Invalid email format" to error list
+        END IF
+    END IF
+
+    IF password is empty THEN
+        ADD "Password is required" to error list
+    ELSE
+        IF password length is less than minimum required length THEN
+            ADD "Password is too short" to error list
+        END IF
+
+        IF password does not satisfy required format THEN
+            ADD "Invalid password format" to error list
+        END IF
+    END IF
+
+    IF error list is not empty THEN
+        DISPLAY all error messages
+        DISPLAY form again
+    ELSE
+        ACCEPT form submission
+
+        SANITIZE validated input
+
+        PROCESS submitted data
+
+        DISPLAY "Form submitted successfully"
+    END IF
+
+END

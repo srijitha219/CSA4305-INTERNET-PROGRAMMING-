@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beauty Parlour Booking</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#fff0f5}
+header{background:#8e4585;color:white;text-align:center;padding:20px}
+nav a{color:white;text-decoration:none;margin:15px}
+.container{max-width:1000px;margin:30px auto;padding:20px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:25px;border-radius:12px;box-shadow:0 3px 10px #ddd}
+input,select,button{width:100%;padding:12px;margin:8px 0}
+button{background:#8e4585;color:white;border:0;border-radius:5px}
+footer{background:#8e4585;color:white;text-align:center;padding:20px}
+@media(max-width:700px){.services{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>💇 Glamour Beauty Parlour</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Stylists</a>
+<a href="#">Appointments</a>
+<a href="#">Login</a>
+</nav>
+</header>
+
+<div class="container">
+
+<h2>Our Services</h2>
+
+<div class="services">
+<div class="card">
+<h3>Hair Styling</h3>
+<p>Professional hair styling service.</p>
+<p>₹500</p>
+<button onclick="alert('Service Selected')">Book</button>
+</div>
+
+<div class="card">
+<h3>Facial</h3>
+<p>Premium facial treatment.</p>
+<p>₹800</p>
+<button onclick="alert('Service Selected')">Book</button>
+</div>
+
+<div class="card">
+<h3>Bridal Makeup</h3>
+<p>Complete bridal makeup package.</p>
+<p>₹5000</p>
+<button onclick="alert('Service Selected')">Book</button>
+</div>
+</div>
+
+<div class="card">
+<h2>Book Appointment</h2>
+<input placeholder="Customer Name">
+<select>
+<option>Select Stylist</option>
+<option>Anita</option>
+<option>Priya</option>
+<option>Meena</option>
+</select>
+<input type="date">
+<input type="time">
+<button onclick="alert('Appointment Booked Successfully')">Book Appointment</button>
+</div>
+
+</div>
+
+<footer>© 2026 Glamour Beauty Parlour</footer>
+
+</body>
+</html>

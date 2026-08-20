@@ -1,0 +1,47 @@
+3. JSP REQUEST FLOW
+
+ALGORITHM JSPRequestFlow
+
+BEGIN
+    CLIENT sends HTTP request for JSP page
+
+    RECEIVE request at Web Server
+
+    FORWARD request to JSP Container
+
+    CHECK whether JSP page is already compiled
+
+    IF JSP page is not compiled THEN
+        TRANSLATE JSP page into Servlet
+        COMPILE generated Servlet
+    END IF
+
+    EXECUTE JSP Servlet
+
+    JSP Servlet processes request
+
+    IF backend processing is required THEN
+        CALL Servlet or JavaBean
+
+        IF database operation is required THEN
+            ESTABLISH database connection
+            EXECUTE SQL query
+            RETRIEVE required data
+            PROCESS result
+            CLOSE database connection
+        END IF
+
+        RETURN processed data to JSP
+    END IF
+
+    JSP combines HTML with dynamic data
+
+    GENERATE dynamic HTML response
+
+    SEND response to Web Server
+
+    Web Server sends HTTP response to CLIENT
+
+    CLIENT displays generated web page
+
+END

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Train Reservation System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #12355b;
+            color: white;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #12355b, #1d6fa5);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            background: white;
+            color: #222;
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-btn {
+            background: #ff9800;
+            color: white;
+            width: 100%;
+            margin-top: 22px;
+        }
+
+        .search-btn:hover {
+            background: #e68900;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #12355b;
+        }
+
+        .train-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .train-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+
+        .train-card h3 {
+            color: #12355b;
+            margin-bottom: 10px;
+        }
+
+        .train-card p {
+            margin: 7px 0;
+            font-size: 14px;
+        }
+
+        .available {
+            color: green;
+            font-weight: bold;
+        }
+
+        .book-btn {
+            background: #12355b;
+            color: white;
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .book-btn:hover {
+            background: #1d6fa5;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature h3 {
+            color: #12355b;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #12355b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .train-list {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .form-row,
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚆 RailBook</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Search Trains</a>
+        <a href="#">My Bookings</a>
+        <a href="#">PNR Status</a>
+        <a href="#">Login</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <h2>Online Train Reservation</h2>
+
+    <p>Search trains, check seat availability and book your tickets easily.</p>
+
+    <div class="search-box">
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>From Station</label>
+                <input type="text" id="from" placeholder="Enter origin">
+            </div>
+
+            <div class="form-group">
+                <label>To Station</label>
+                <input type="text" id="to" placeholder="Enter destination">
+            </div>
+
+            <div class="form-group">
+                <label>Journey Date</label>
+                <input type="date" id="date">
+            </div>
+
+            <div class="form-group">
+                <label>Class</label>
+                <select id="classType">
+                    <option value="">Select Class</option>
+                    <option>First AC</option>
+                    <option>Second AC</option>
+                    <option>Third AC</option>
+                    <option>Sleeper</option>
+                    <option>General</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button class="search-btn" onclick="searchTrain()">
+            Search Trains
+        </button>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Available Trains</h2>
+
+    <div class="train-list">
+
+        <div class="train-card">
+            <h3>Chennai Express</h3>
+            <p><b>From:</b> Chennai</p>
+            <p><b>To:</b> Bangalore</p>
+            <p><b>Departure:</b> 06:30 AM</p>
+            <p><b>Arrival:</b> 01:30 PM</p>
+            <p class="available">Seats Available: 42</p>
+            <button class="book-btn" onclick="bookTrain('Chennai Express')">
+                Book Ticket
+            </button>
+        </div>
+
+        <div class="train-card">
+            <h3>Southern Express</h3>
+            <p><b>From:</b> Chennai</p>
+            <p><b>To:</b> Madurai</p>
+            <p><b>Departure:</b> 08:00 AM</p>
+            <p><b>Arrival:</b> 03:30 PM</p>
+            <p class="available">Seats Available: 25</p>
+            <button class="book-btn" onclick="bookTrain('Southern Express')">
+                Book Ticket
+            </button>
+        </div>
+
+        <div class="train-card">
+            <h3>Coastal Express</h3>
+            <p><b>From:</b> Chennai</p>
+            <p><b>To:</b> Coimbatore</p>
+            <p><b>Departure:</b> 09:15 AM</p>
+            <p><b>Arrival:</b> 05:00 PM</p>
+            <p class="available">Seats Available: 18</p>
+            <button class="book-btn" onclick="bookTrain('Coastal Express')">
+                Book Ticket
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Our Features</h2>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>🔍 Search Trains</h3>
+            <p>Search trains based on route, date and class.</p>
+        </div>
+
+        <div class="feature">
+            <h3>💺 Seat Availability</h3>
+            <p>View available seats and select your preferred class.</p>
+        </div>
+
+        <div class="feature">
+            <h3>💳 Secure Payment</h3>
+            <p>Make payments securely through online payment options.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🎫 PNR Status</h3>
+            <p>Check your ticket status using your PNR number.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 RailBook - Online Train Reservation System</p>
+</footer>
+
+<script>
+
+function searchTrain() {
+
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    let date = document.getElementById("date").value;
+    let classType = document.getElementById("classType").value;
+
+    if (from === "" || to === "" || date === "" || classType === "") {
+        alert("Please enter all search details.");
+        return;
+    }
+
+    alert(
+        "Searching trains from " +
+        from +
+        " to " +
+        to +
+        "\nDate: " +
+        date +
+        "\nClass: " +
+        classType
+    );
+}
+
+function bookTrain(trainName) {
+
+    let loggedIn = confirm(
+        "You selected " + trainName +
+        ".\n\nDo you want to continue with booking?"
+    );
+
+    if (loggedIn) {
+        alert(
+            "Booking page opened for " +
+            trainName +
+            "."
+        );
+    }
+}
+
+</script>
+
+</body>
+</html>
